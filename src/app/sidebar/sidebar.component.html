@@ -1,0 +1,19 @@
+<aside id="left-sidebar-off">
+    <div id="left-sidebar-container">
+        <nav id="left-sidebar-nav">
+            <div class="left-sidebar-links">
+                <div class="search-container" (click)="Zapnout()">
+                    <input [(ngModel)]="search" (keydown.arrowDown)="filteredOptions + 1" placeholder="Search for components">
+                </div>
+                <div>
+                    <img src="https://static.booktook.cz/files/photos/original/8/8a0fd8049bce11c8f10b2a8e3227c1df73d8c6ed.jpg" width="100px" height="100px">
+                </div>
+                <div class="options" *ngIf="zapinac">
+                    <div class="options-title-box" *ngFor="let option of filteredOptions;" [routerLink]="option.path" (click)="Vypnout()">
+                        {{option.title}}
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</aside>
